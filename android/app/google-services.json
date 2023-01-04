@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "976557541278",
+    "project_id": "pixiehollow",
+    "storage_bucket": "pixiehollow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976557541278:android:148d9fc67fa7a2d9c0b88f",
+        "android_client_info": {
+          "package_name": "in.pixiehollow.pixiehollow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976557541278-j8jmkpc5gb1c0mf4ft0uiov6g565ge1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxHM-U2-NQmvnIWXo9YTChbt4hO9k2wWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976557541278-j8jmkpc5gb1c0mf4ft0uiov6g565ge1r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
