@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/home/home_screen_viewmodel.dart';
 import 'package:pixiehollow/utils/widgets/navbar.dart';
+import 'package:pixiehollow/utils/widgets/story.dart';
 import 'package:stacked/stacked.dart';
 
 class HomeView extends StatelessWidget {
@@ -24,9 +25,38 @@ class HomeView extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text('Pixiehollow'),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.favorite_border_outlined),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.shopping_bag_outlined),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications_none_rounded),
+            ),
+          ],
         ),
-        body: Center(
-          child: Text('Home Page'),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 90,
+              child: ListView.builder(
+                itemCount: 7, // Adjust this label.length to make it dynamic.
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Story();
+                },
+              ),
+            ),
+          ],
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),

@@ -54,7 +54,7 @@ class Navbar extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(3.0),
+                          padding: EdgeInsets.all(3.0),
                           child: Text(
                             'Sravani',
                             style: TextStyle(
@@ -64,11 +64,11 @@ class Navbar extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(3.0),
+                          padding: EdgeInsets.all(3.0),
                           child: Text('8474857587'),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(3.0),
+                          padding: EdgeInsets.all(3.0),
                           child: Text('sravani@gmail.com'),
                         ),
                       ],
