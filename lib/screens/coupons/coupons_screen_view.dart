@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/coupons/coupons_screen_viewmodel.dart';
+import 'package:pixiehollow/utils/widgets/navbar.dart';
 import 'package:stacked/stacked.dart';
 
 class CouponsView extends StatelessWidget {
@@ -9,7 +10,10 @@ class CouponsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<CouponsViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        body: Center(child: Text('Coupons Page')),
+        drawer: const Navbar(),
+        appBar: AppBar(
+          title: const Text('Coupons'),
+        ),
       ),
       viewModelBuilder: () => CouponsViewModel(),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/wallet/wallet_screen_viewmodel.dart';
+import 'package:pixiehollow/utils/widgets/navbar.dart';
 import 'package:stacked/stacked.dart';
 
 class WalletView extends StatelessWidget {
@@ -9,7 +10,10 @@ class WalletView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<WalletViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        body: Center(child: Text('Wallet Page')),
+        drawer: const Navbar(),
+        appBar: AppBar(
+          title: const Text('Pixiehollow'),
+        ),
       ),
       viewModelBuilder: () => WalletViewModel(),
     );

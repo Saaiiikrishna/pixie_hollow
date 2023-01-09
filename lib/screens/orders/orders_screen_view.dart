@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/orders/orders_screen_viewmodel.dart';
+import 'package:pixiehollow/utils/widgets/navbar.dart';
 import 'package:stacked/stacked.dart';
 
 class OrdersView extends StatelessWidget {
@@ -9,7 +10,10 @@ class OrdersView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<OrdersViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        body: Center(child: Text('Orders Page')),
+        drawer: const Navbar(),
+        appBar: AppBar(
+          title: const Text('Your Orders'),
+        ),
       ),
       viewModelBuilder: () => OrdersViewModel(),
     );

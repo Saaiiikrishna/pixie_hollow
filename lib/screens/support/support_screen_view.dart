@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/support/support_screen_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../utils/widgets/navbar.dart';
+
 class SupportView extends StatelessWidget {
   const SupportView({Key? key}) : super(key: key);
 
@@ -9,7 +11,10 @@ class SupportView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<SupportViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        body: Center(child: Text('Support Page')),
+        drawer: const Navbar(),
+        appBar: AppBar(
+          title: const Text('Help & Support'),
+        ),
       ),
       viewModelBuilder: () => SupportViewModel(),
     );

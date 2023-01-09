@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/youloved/youloved_screen_viewmodel.dart';
+import 'package:pixiehollow/utils/widgets/navbar.dart';
 import 'package:stacked/stacked.dart';
 
 class YouLovedView extends StatelessWidget {
@@ -9,7 +10,10 @@ class YouLovedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<YouLovedViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        body: Center(child: Text('You Loved Page')),
+        drawer: const Navbar(),
+        appBar: AppBar(
+          title: const Text('You Loved'),
+        ),
       ),
       viewModelBuilder: () => YouLovedViewModel(),
     );

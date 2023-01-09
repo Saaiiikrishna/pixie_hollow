@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/profile/profile_screen_viewmodel.dart';
+import 'package:pixiehollow/utils/widgets/navbar.dart';
 import 'package:stacked/stacked.dart';
 
 class ProfileView extends StatelessWidget {
@@ -9,7 +10,10 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<ProfileViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        body: Center(child: Text('User Profile Page')),
+        drawer: const Navbar(),
+        appBar: AppBar(
+          title: const Text('Account'),
+        ),
       ),
       viewModelBuilder: () => ProfileViewModel(),
     );

@@ -22,37 +22,38 @@ class HomeView extends StatelessWidget {
           supportTapped: model.drawerSupport,
           logoutTapped: model.drawerLogout,
           profileTapped: model.drawerProfile,
+          homeTapped: model.drawerHome,
         ),
         appBar: AppBar(
-          title: Text('Pixiehollow'),
+          title: const Text('Pixiehollow'),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.favorite_border_outlined),
+              icon: const Icon(Icons.favorite_border_outlined),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.shopping_bag_outlined),
+              icon: const Icon(Icons.shopping_bag_outlined),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.notifications_none_rounded),
+              icon: const Icon(Icons.notifications_none_rounded),
             ),
           ],
         ),
         body: Column(
           children: [
             SizedBox(
-              height: 90,
+              height: 50,
               child: ListView.builder(
                 itemCount: 7, // Adjust this label.length to make it dynamic.
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Story();
+                  return const Story();
                 },
               ),
             ),

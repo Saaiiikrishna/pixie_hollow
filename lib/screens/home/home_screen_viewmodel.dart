@@ -27,4 +27,6 @@ class HomeViewModel extends BaseViewModel {
   void drawerSupport() => _navigationService.navigateTo(Routes.supportView);
 
   void drawerLogout() => _navigationService.navigateTo(Routes.authView);
+
+  void drawerHome() => _navigationService.navigateTo(Routes.homeView);
 }
