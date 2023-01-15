@@ -1,12 +1,16 @@
 import 'package:pixiehollow/app/app.locator.dart';
+import 'package:pixiehollow/app/app.logger.dart';
+import 'package:pixiehollow/exceptions/firestore_api_exception.dart';
+import 'package:pixiehollow/models/user_model.dart';
+import 'package:pixiehollow/services/user_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_firebase_auth/stacked_firebase_auth.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 abstract class FormLayoutViewModel extends FormViewModel {
-  // final log = getLogger('LoginViewModel');
+  final log = getLogger('LoginViewModel');
 
-  // final userService = locator<UserService>();
+  final userService = locator<UserService>();
   final navigationService = locator<NavigationService>();
 
   final firebaseAuthenticationService =
@@ -21,23 +25,17 @@ abstract class FormLayoutViewModel extends FormViewModel {
   Future<FirebaseAuthenticationResult> runAuthentication();
 
   Future saveData() async {
-    // log.i('valued:$formValueMap');
+    log.i('valued:$formValueMap');
 
-    // try {
-    final result =
-        await runBusyFuture(runAuthentication(), throwException: true);
+    try {
+      final result =
+          await runBusyFuture(runAuthentication(), throwException: true);
 
-    if (!result.hasError) {
-      navigationService.replaceWith(successRoute);
-    } else {
-      setValidationMessage(result.errorMessage);
+      await _handleAuthenticationResponse(result);
+    } on FirestoreApiException catch (e) {
+      log.e(e.toString());
+      setValidationMessage(e.toString());
     }
-
-    // await _handleAuthenticationResponse(result);
-    // } on FirestoreApiException catch (e) {
-    // log.e(e.toString());
-    // setValidationMessage(e.toString());
-    // }
   }
 
   Future<void> useGoogleAuthentication() async {
@@ -48,7 +46,7 @@ abstract class FormLayoutViewModel extends FormViewModel {
   Future<void> useAppleAuthentication() async {
     final result = await firebaseAuthenticationService.signInWithApple(
       appleClientId: '',
-      appleRedirectUri: '',
+      appleRedirectUri: 'https://pixiehollow.firebaseapp.com/__/auth/handler',
     );
     await _handleAuthenticationResponse(result);
   }
@@ -58,30 +56,30 @@ abstract class FormLayoutViewModel extends FormViewModel {
 
   Future<void> _handleAuthenticationResponse(
       FirebaseAuthenticationResult authResult) async {
-    //   log.v('authResult.hasError:${authResult.hasError}');
+    log.v('authResult.hasError:${authResult.hasError}');
 
     if (!authResult.hasError && authResult.user != null) {
-      //     final user = authResult.user!;
+      final user = authResult.user!;
 
-      //     await userService.syncOrCreateUserAccount(
-      //       user: User(
-      //         id: user.uid,
-      //         email: user.email,
-      //       ),
-      //     );
+      await userService.syncOrCreateUserAccount(
+        user: UserModel(
+          id: user.uid,
+          email: user.email,
+        ),
+      );
 
       // navigate to success route
       navigationService.replaceWith(successRoute);
     } else {
-      //     if (!authResult.hasError && authResult.user == null) {
-      //       log.wtf(
-      //           'We have no error but the user is null. This should not be happening');
-      //     }
+      if (!authResult.hasError && authResult.user == null) {
+        log.wtf(
+            'We have no error but the user is null. This should not be happening');
+      }
 
-      //     log.w('Authentication Failed: ${authResult.errorMessage}');
+      log.w('Authentication Failed: ${authResult.errorMessage}');
 
       setValidationMessage(authResult.errorMessage);
-      // notifyListeners();
+      notifyListeners();
     }
   }
 }
