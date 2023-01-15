@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pixiehollow/utils/dimensions.dart';
+import 'package:pixiehollow/utils/general/dimensions.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   final Widget webScreenLayout;

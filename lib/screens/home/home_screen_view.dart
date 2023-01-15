@@ -33,15 +33,15 @@ class HomeView extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {},
+              icon: const Icon(Icons.notifications_none_rounded),
+            ),
+            IconButton(
+              onPressed: () {},
               icon: const Icon(Icons.favorite_border_outlined),
             ),
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.shopping_bag_outlined),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.notifications_none_rounded),
             ),
           ],
         ),

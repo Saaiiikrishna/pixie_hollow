@@ -192,8 +192,8 @@ class Navbar extends StatelessWidget {
             title: const Text('Logout'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).push(
-                  CupertinoPageRoute(builder: (context) => const AuthView()));
+              Navigator.of(context)
+                  .push(CupertinoPageRoute(builder: (context) => AuthView()));
             },
           ),
         ],

@@ -5,17 +5,20 @@ import 'package:pixiehollow/screens/orders/orders_screen_view.dart';
 import 'package:pixiehollow/screens/payment/payment_screen_view.dart';
 import 'package:pixiehollow/screens/pixiefamily/pixiefamily_screen_view.dart';
 import 'package:pixiehollow/screens/profile/profile_screen_view.dart';
+import 'package:pixiehollow/screens/register/register_screen_view.dart';
 import 'package:pixiehollow/screens/settings/settings_screen_view.dart';
 import 'package:pixiehollow/screens/support/support_screen_view.dart';
 import 'package:pixiehollow/screens/wallet/wallet_screen_view.dart';
 import 'package:pixiehollow/screens/youloved/youloved_screen_view.dart';
 import 'package:stacked/stacked_annotations.dart';
+import 'package:stacked_firebase_auth/stacked_firebase_auth.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 @StackedApp(
   routes: [
     MaterialRoute(page: HomeView, initial: true),
     CupertinoRoute(page: AuthView),
+    CupertinoRoute(page: RegisterAccountView),
     CupertinoRoute(page: ProfileView),
     CupertinoRoute(page: OrdersView),
     CupertinoRoute(page: CouponsView),
@@ -28,6 +31,7 @@ import 'package:stacked_services/stacked_services.dart';
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
+    Singleton(classType: FirebaseAuthenticationService),
   ],
 )
 class AppSetup {}

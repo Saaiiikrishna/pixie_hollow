@@ -12,7 +12,7 @@ class ProfileView extends StatelessWidget {
       builder: (context, model, child) => Scaffold(
         drawer: const Navbar(),
         appBar: AppBar(
-          title: const Text('Account'),
+          title: const Text('My Account'),
         ),
       ),
       viewModelBuilder: () => ProfileViewModel(),

@@ -5,27 +5,31 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/cupertino.dart' as _i13;
+import 'package:flutter/cupertino.dart' as _i14;
+import 'package:flutter/material.dart' as _i15;
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/auth/auth_screen_view.dart' as _i3;
-import 'package:pixiehollow/screens/coupons/coupons_screen_view.dart' as _i6;
+import 'package:pixiehollow/screens/coupons/coupons_screen_view.dart' as _i7;
 import 'package:pixiehollow/screens/home/home_screen_view.dart' as _i2;
-import 'package:pixiehollow/screens/orders/orders_screen_view.dart' as _i5;
-import 'package:pixiehollow/screens/payment/payment_screen_view.dart' as _i10;
+import 'package:pixiehollow/screens/orders/orders_screen_view.dart' as _i6;
+import 'package:pixiehollow/screens/payment/payment_screen_view.dart' as _i11;
 import 'package:pixiehollow/screens/pixiefamily/pixiefamily_screen_view.dart'
-    as _i12;
-import 'package:pixiehollow/screens/profile/profile_screen_view.dart' as _i4;
-import 'package:pixiehollow/screens/settings/settings_screen_view.dart' as _i8;
-import 'package:pixiehollow/screens/support/support_screen_view.dart' as _i9;
-import 'package:pixiehollow/screens/wallet/wallet_screen_view.dart' as _i11;
-import 'package:pixiehollow/screens/youloved/youloved_screen_view.dart' as _i7;
+    as _i13;
+import 'package:pixiehollow/screens/profile/profile_screen_view.dart' as _i5;
+import 'package:pixiehollow/screens/register/register_screen_view.dart' as _i4;
+import 'package:pixiehollow/screens/settings/settings_screen_view.dart' as _i9;
+import 'package:pixiehollow/screens/support/support_screen_view.dart' as _i10;
+import 'package:pixiehollow/screens/wallet/wallet_screen_view.dart' as _i12;
+import 'package:pixiehollow/screens/youloved/youloved_screen_view.dart' as _i8;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i14;
+import 'package:stacked_services/stacked_services.dart' as _i16;
 
 class Routes {
   static const homeView = '/';
 
   static const authView = '/auth-view';
+
+  static const registerAccountView = '/register-account-view';
 
   static const profileView = '/profile-view';
 
@@ -48,6 +52,7 @@ class Routes {
   static const all = <String>{
     homeView,
     authView,
+    registerAccountView,
     profileView,
     ordersView,
     couponsView,
@@ -71,40 +76,44 @@ class StackedRouter extends _i1.RouterBase {
       page: _i3.AuthView,
     ),
     _i1.RouteDef(
+      Routes.registerAccountView,
+      page: _i4.RegisterAccountView,
+    ),
+    _i1.RouteDef(
       Routes.profileView,
-      page: _i4.ProfileView,
+      page: _i5.ProfileView,
     ),
     _i1.RouteDef(
       Routes.ordersView,
-      page: _i5.OrdersView,
+      page: _i6.OrdersView,
     ),
     _i1.RouteDef(
       Routes.couponsView,
-      page: _i6.CouponsView,
+      page: _i7.CouponsView,
     ),
     _i1.RouteDef(
       Routes.youLovedView,
-      page: _i7.YouLovedView,
+      page: _i8.YouLovedView,
     ),
     _i1.RouteDef(
       Routes.settingsView,
-      page: _i8.SettingsView,
+      page: _i9.SettingsView,
     ),
     _i1.RouteDef(
       Routes.supportView,
-      page: _i9.SupportView,
+      page: _i10.SupportView,
     ),
     _i1.RouteDef(
       Routes.paymentsView,
-      page: _i10.PaymentsView,
+      page: _i11.PaymentsView,
     ),
     _i1.RouteDef(
       Routes.walletView,
-      page: _i11.WalletView,
+      page: _i12.WalletView,
     ),
     _i1.RouteDef(
       Routes.familyView,
-      page: _i12.FamilyView,
+      page: _i13.FamilyView,
     ),
   ];
 
@@ -116,62 +125,74 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i3.AuthView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i3.AuthView(),
+      final args = data.getArgs<AuthViewArguments>(
+        orElse: () => const AuthViewArguments(),
+      );
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => _i3.AuthView(key: args.key),
         settings: data,
       );
     },
-    _i4.ProfileView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i4.ProfileView(),
+    _i4.RegisterAccountView: (data) {
+      final args = data.getArgs<RegisterAccountViewArguments>(
+        orElse: () => const RegisterAccountViewArguments(),
+      );
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => _i4.RegisterAccountView(key: args.key),
         settings: data,
       );
     },
-    _i5.OrdersView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i5.OrdersView(),
+    _i5.ProfileView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i5.ProfileView(),
         settings: data,
       );
     },
-    _i6.CouponsView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i6.CouponsView(),
+    _i6.OrdersView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i6.OrdersView(),
         settings: data,
       );
     },
-    _i7.YouLovedView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i7.YouLovedView(),
+    _i7.CouponsView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i7.CouponsView(),
         settings: data,
       );
     },
-    _i8.SettingsView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i8.SettingsView(),
+    _i8.YouLovedView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i8.YouLovedView(),
         settings: data,
       );
     },
-    _i9.SupportView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i9.SupportView(),
+    _i9.SettingsView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i9.SettingsView(),
         settings: data,
       );
     },
-    _i10.PaymentsView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i10.PaymentsView(),
+    _i10.SupportView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i10.SupportView(),
         settings: data,
       );
     },
-    _i11.WalletView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i11.WalletView(),
+    _i11.PaymentsView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i11.PaymentsView(),
         settings: data,
       );
     },
-    _i12.FamilyView: (data) {
-      return _i13.CupertinoPageRoute<dynamic>(
-        builder: (context) => const _i12.FamilyView(),
+    _i12.WalletView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i12.WalletView(),
+        settings: data,
+      );
+    },
+    _i13.FamilyView: (data) {
+      return _i14.CupertinoPageRoute<dynamic>(
+        builder: (context) => const _i13.FamilyView(),
         settings: data,
       );
     },
@@ -183,7 +204,19 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i14.NavigationService {
+class AuthViewArguments {
+  const AuthViewArguments({this.key});
+
+  final _i15.Key? key;
+}
+
+class RegisterAccountViewArguments {
+  const RegisterAccountViewArguments({this.key});
+
+  final _i15.Key? key;
+}
+
+extension NavigatorStateExtension on _i16.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -198,14 +231,32 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToAuthView([
+  Future<dynamic> navigateToAuthView({
+    _i15.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.authView,
+        arguments: AuthViewArguments(key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToRegisterAccountView({
+    _i15.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.registerAccountView,
+        arguments: RegisterAccountViewArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -332,6 +383,178 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.familyView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithHomeView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.homeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAuthView({
+    _i15.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.authView,
+        arguments: AuthViewArguments(key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithRegisterAccountView({
+    _i15.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.registerAccountView,
+        arguments: RegisterAccountViewArguments(key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.profileView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithOrdersView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.ordersView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithCouponsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.couponsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithYouLovedView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.youLovedView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSettingsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.settingsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSupportView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.supportView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithPaymentsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.paymentsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithWalletView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.walletView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithFamilyView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.familyView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
