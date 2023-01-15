@@ -3,10 +3,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/app/app.locator.dart';
 import 'package:pixiehollow/app/app.router.dart';
-import 'package:pixiehollow/responsive/mobile_screen_layout.dart';
-import 'package:pixiehollow/responsive/responsive_layout_screen.dart';
-import 'package:pixiehollow/responsive/web_screen_layout.dart';
-import 'package:pixiehollow/utils/colors.dart';
+import 'package:pixiehollow/utils/responsive/mobile_screen_layout.dart';
+import 'package:pixiehollow/utils/responsive/responsive_layout_screen.dart';
+import 'package:pixiehollow/utils/responsive/web_screen_layout.dart';
+import 'package:pixiehollow/utils/general/colors.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 Future main() async {

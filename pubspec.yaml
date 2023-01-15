@@ -47,6 +47,7 @@ dependencies:
   stacked: ^3.0.1
   stacked_services: ^0.9.8
   stacked_generator: ^0.8.1
+  auth_buttons: ^3.0.0
 
 dev_dependencies:
   flutter_test:
