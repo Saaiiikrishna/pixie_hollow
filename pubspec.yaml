@@ -65,6 +65,9 @@ dev_dependencies:
   json_serializable: ^6.5.4
   stacked_generator: ^0.8.1
 
+  # Testing
+  mockito: ^5.3.2
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
