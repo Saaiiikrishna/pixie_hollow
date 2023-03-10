@@ -1,18 +1,21 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pixiehollow/screens/home/home_screen_viewmodel.dart';
 import 'package:pixiehollow/test/helpers/test_helpers.dart';
+import 'package:mockito/mockito.dart';
 
 void main() {
-  group('StartupViewmodelTest -', () {
+  group('HomeViewmodelTest -', () {
     setUp(() => registerServices());
     tearDown(() => unregisterServices());
   });
 
-  group('runStartupLogic -', () {
+  group('runHomeLogic -', () {
     test('Checking if we have a user logged in on UserService', () async {
       final userService = getAndRegisterUserService();
       final model = HomeViewModel();
-      await model.runStartupLogic();
+      await model.runHomeLogic();
       verify(userService.hasLoggedInUser);
     });
   });

@@ -1,4 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:pixiehollow/app/app.locator.dart';
 import 'package:pixiehollow/services/user_service.dart';
 import 'package:pixiehollow/test/helpers/test_helpers.mocks.dart';
@@ -8,9 +11,12 @@ import 'package:stacked_services/stacked_services.dart';
   MockSpec<UserService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<NavigationService>(onMissingStub: OnMissingStub.returnDefault),
 ])
-UserService getAndRegisterUserService() {
+UserService getAndRegisterUserService({
+  bool hasLoggedInUser = false,
+}) {
   _removeRegistrationIfExists<UserService>();
   final service = MockUserService();
+  when(service.hasLoggedInUser).thenReturn(hasLoggedInUser);
   locator.registerSingleton<UserService>(service);
   return service;
 }
