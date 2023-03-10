@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// StackedRouterGenerator
+// StackedNavigatorGenerator
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/cupertino.dart' as _i14;
-import 'package:flutter/material.dart' as _i15;
+import 'package:flutter/cupertino.dart' as _i15;
+import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/auth/auth_screen_view.dart' as _i3;
 import 'package:pixiehollow/screens/coupons/coupons_screen_view.dart' as _i7;
@@ -119,81 +119,93 @@ class StackedRouter extends _i1.RouterBase {
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i3.AuthView: (data) {
       final args = data.getArgs<AuthViewArguments>(
         orElse: () => const AuthViewArguments(),
       );
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => _i3.AuthView(key: args.key),
         settings: data,
+        maintainState: false,
       );
     },
     _i4.RegisterAccountView: (data) {
       final args = data.getArgs<RegisterAccountViewArguments>(
         orElse: () => const RegisterAccountViewArguments(),
       );
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => _i4.RegisterAccountView(key: args.key),
         settings: data,
+        maintainState: false,
       );
     },
     _i5.ProfileView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i5.ProfileView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i6.OrdersView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i6.OrdersView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i7.CouponsView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i7.CouponsView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i8.YouLovedView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i8.YouLovedView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i9.SettingsView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i9.SettingsView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i10.SupportView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i10.SupportView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i11.PaymentsView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i11.PaymentsView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i12.WalletView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i12.WalletView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i13.FamilyView: (data) {
-      return _i14.CupertinoPageRoute<dynamic>(
+      return _i15.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i13.FamilyView(),
         settings: data,
+        maintainState: false,
       );
     },
   };
@@ -207,13 +219,23 @@ class StackedRouter extends _i1.RouterBase {
 class AuthViewArguments {
   const AuthViewArguments({this.key});
 
-  final _i15.Key? key;
+  final _i14.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
 }
 
 class RegisterAccountViewArguments {
   const RegisterAccountViewArguments({this.key});
 
-  final _i15.Key? key;
+  final _i14.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
 }
 
 extension NavigatorStateExtension on _i16.NavigationService {
@@ -232,7 +254,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> navigateToAuthView({
-    _i15.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -248,7 +270,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> navigateToRegisterAccountView({
-    _i15.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -404,7 +426,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> replaceWithAuthView({
-    _i15.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -420,7 +442,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> replaceWithRegisterAccountView({
-    _i15.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
