@@ -36,7 +36,7 @@ class HomeViewModel extends BaseViewModel {
   void drawerHome() => _navigationService.navigateTo(Routes.homeView);
 
   Future<void> runHomeLogic() async {
-    // _placesService.initialize(apiKey: 'AIzaSyCv40wPtraO_z6vLGS_Hc8ar8PlZ7JvX2E');
+    // _placesService.initialize(apiKey: '');
     if (_userService.hasLoggedInUser) {
       // log.v(
       //     'We found a user on the device, synchronizing the user profile ...');
