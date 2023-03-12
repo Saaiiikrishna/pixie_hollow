@@ -30,7 +30,7 @@ class RegisterAccountView extends StatelessWidget with $RegisterAccountView {
           onSignInWithGoogle: model.useGoogleAuthentication,
           onSignInWithApple: model.useAppleAuthentication,
           mainButtonTitle: 'Register',
-          subtitle: 'fddslgjh',
+          subtitle: 'Fill in your details to join us.',
           googleLogIn: 'Log in with Google',
           appleLogin: 'Log In with Apple',
           form: Column(

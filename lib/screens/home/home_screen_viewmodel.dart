@@ -38,19 +38,19 @@ class HomeViewModel extends BaseViewModel {
   Future<void> runHomeLogic() async {
     // _placesService.initialize(apiKey: '');
     if (_userService.hasLoggedInUser) {
-      // log.v(
-      //     'We found a user on the device, synchronizing the user profile ...');
-      // await _userService.syncUserAccount();
+      log.v(
+          'We found a user on the device, synchronizing the user profile ...');
+      await _userService.syncUserAccount();
 
-      // final currentUser = _userService.currentUser;
-      // log.v('User synchronization complete. User profile: $currentUser');
+      final currentUser = _userService.currentUser;
+      log.v('User synchronization complete. User profile: $currentUser');
 
-      // if (!currentUser.hasAddress) {
-      //   _navigationService.navigateTo(Routes.addressSelectionView);
-      // }
+      if (!currentUser.hasAddress) {
+        _navigationService.navigateTo(Routes.profileView);
+      }
     } else {
-      // log.v('No user found on device, navigating to On-Boarding Screen');
-      // _navigationService.replaceWith(Routes.homeView);
+      log.v('No user found on device, navigating to Login screen');
+      _navigationService.replaceWith(Routes.authView);
     }
   }
 }
