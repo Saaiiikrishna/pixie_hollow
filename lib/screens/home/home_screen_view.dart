@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:pixiehollow/screens/home/home_screen_viewmodel.dart';
 import 'package:pixiehollow/utils/widgets/navbar.dart';
 import 'package:pixiehollow/utils/widgets/story.dart';
@@ -10,6 +11,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(
+      onViewModelReady: (model) =>
+          SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+        model.runHomeLogic();
+      }),
       builder: (context, model, child) => Scaffold(
         drawer: Navbar(
           ordersTapped: model.drawerOrders,

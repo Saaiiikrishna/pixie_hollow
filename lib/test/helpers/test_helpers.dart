@@ -3,6 +3,7 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:pixiehollow/app/app.locator.dart';
+import 'package:pixiehollow/models/user_model.dart';
 import 'package:pixiehollow/services/user_service.dart';
 import 'package:pixiehollow/test/helpers/test_helpers.mocks.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -13,10 +14,13 @@ import 'package:stacked_services/stacked_services.dart';
 ])
 UserService getAndRegisterUserService({
   bool hasLoggedInUser = false,
+  UserModel? currentUser,
 }) {
   _removeRegistrationIfExists<UserService>();
   final service = MockUserService();
   when(service.hasLoggedInUser).thenReturn(hasLoggedInUser);
+  when(service.currentUser).thenReturn(
+      currentUser ?? UserModel(id: "default_user", name: "default_user"));
   locator.registerSingleton<UserService>(service);
   return service;
 }

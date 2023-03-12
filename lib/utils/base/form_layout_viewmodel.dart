@@ -64,6 +64,7 @@ abstract class FormLayoutViewModel extends FormViewModel {
       await userService.syncOrCreateUserAccount(
         user: UserModel(
           id: user.uid,
+          name: user.displayName,
           email: user.email,
         ),
       );
