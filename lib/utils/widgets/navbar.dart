@@ -435,19 +435,22 @@ class Navbar extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton.icon(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  const Color.fromRGBO(255, 183, 197, 1),
+            Padding(
+              padding: const EdgeInsets.only(left: 40, right: 40),
+              child: ElevatedButton.icon(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color.fromRGBO(255, 183, 197, 1),
+                  ),
+                  elevation: MaterialStateProperty.all(0),
                 ),
-                elevation: MaterialStateProperty.all(0),
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.logout,
+                  size: 24.0,
+                ),
+                label: const Text('Logout'),
               ),
-              onPressed: () {},
-              icon: const Icon(
-                Icons.logout,
-                size: 24.0,
-              ),
-              label: const Text('Logout'),
             ),
             const Center(
               child: Text(
