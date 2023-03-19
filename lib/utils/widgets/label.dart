@@ -15,10 +15,12 @@ class Label extends StatelessWidget {
       child: Container(
           height: height,
           decoration: BoxDecoration(
-              color: const Color.fromRGBO(255, 255, 255, 1),
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(radius!),
-                  bottomRight: Radius.circular(radius!))),
+            color: const Color.fromRGBO(255, 255, 255, 1),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(radius!),
+              bottomRight: Radius.circular(radius!),
+            ),
+          ),
           child: child),
     );
   }
