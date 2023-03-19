@@ -13,14 +13,13 @@ class Label extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(right: padding!, bottom: 12),
       child: Container(
-        height: height,
-        decoration: BoxDecoration(
-            color: const Color.fromRGBO(255, 255, 255, 1),
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(radius!),
-                bottomRight: Radius.circular(radius!))),
-        child: child,
-      ),
+          height: height,
+          decoration: BoxDecoration(
+              color: const Color.fromRGBO(255, 255, 255, 1),
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(radius!),
+                  bottomRight: Radius.circular(radius!))),
+          child: child),
     );
   }
 }

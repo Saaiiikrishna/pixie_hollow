@@ -70,6 +70,12 @@ class Navbar extends StatelessWidget {
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
+                                    color: Color.fromRGBO(
+                                      128,
+                                      130,
+                                      133,
+                                      1,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -79,6 +85,12 @@ class Navbar extends StatelessWidget {
                                   '8474857587',
                                   style: TextStyle(
                                     fontSize: 10,
+                                    color: Color.fromRGBO(
+                                      128,
+                                      130,
+                                      133,
+                                      1,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -88,6 +100,12 @@ class Navbar extends StatelessWidget {
                                   'sravani@gmail.com',
                                   style: TextStyle(
                                     fontSize: 10,
+                                    color: Color.fromRGBO(
+                                      128,
+                                      130,
+                                      133,
+                                      1,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -155,7 +173,18 @@ class Navbar extends StatelessWidget {
               padding: 27.5,
               radius: 25,
               child: ListTile(
-                title: const Text('You Loved'),
+                title: const Text(
+                  'You Loved',
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   _navigationService.navigateToYouLovedView();
                 },
@@ -166,7 +195,18 @@ class Navbar extends StatelessWidget {
               padding: 27.5,
               radius: 25,
               child: ListTile(
-                title: const Text('Wallet'),
+                title: const Text(
+                  'Wallet',
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   _navigationService.navigateToWalletView();
                 },
@@ -177,7 +217,18 @@ class Navbar extends StatelessWidget {
               padding: 27.5,
               radius: 25,
               child: ListTile(
-                title: const Text('My Coupons'),
+                title: const Text(
+                  'My Coupons',
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   _navigationService.navigateToCouponsView();
                 },
@@ -188,7 +239,18 @@ class Navbar extends StatelessWidget {
               padding: 27.5,
               radius: 25,
               child: ListTile(
-                title: const Text('Pixie Hollow Family'),
+                title: const Text(
+                  'Pixie Hollow Family',
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   _navigationService.navigateToFamilyView();
                 },
@@ -199,7 +261,18 @@ class Navbar extends StatelessWidget {
               padding: 27.5,
               radius: 25,
               child: ListTile(
-                title: const Text('Payment Methods'),
+                title: const Text(
+                  'Payment Methods',
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   _navigationService.navigateToPaymentsView();
                 },
@@ -210,7 +283,18 @@ class Navbar extends StatelessWidget {
               padding: 27.5,
               radius: 25,
               child: ListTile(
-                title: const Text('Settings'),
+                title: const Text(
+                  'Settings',
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   _navigationService.navigateToSettingsView();
                 },
@@ -221,7 +305,18 @@ class Navbar extends StatelessWidget {
               padding: 27.5,
               radius: 25,
               child: ListTile(
-                title: const Text('Help & Support'),
+                title: const Text(
+                  'Help & Support',
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   _navigationService.navigateToSupportView();
                 },
@@ -231,7 +326,7 @@ class Navbar extends StatelessWidget {
             ListTile(
               title: const Text('Logout'),
               onTap: () {
-                _navigationService.navigateToAuthView();
+                _navigationService.navigateToHomeView();
               },
             ),
           ],
