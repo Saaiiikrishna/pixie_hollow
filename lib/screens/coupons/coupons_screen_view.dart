@@ -10,7 +10,7 @@ class CouponsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<CouponsViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('Coupons'),
         ),

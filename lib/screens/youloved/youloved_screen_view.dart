@@ -10,7 +10,7 @@ class YouLovedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<YouLovedViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('You Loved'),
         ),

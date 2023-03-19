@@ -10,7 +10,7 @@ class FamilyView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<FamilyViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('Pixie Family'),
         ),

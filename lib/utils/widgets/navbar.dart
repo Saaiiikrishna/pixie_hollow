@@ -1,18 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pixiehollow/screens/auth/auth_screen_view.dart';
-import 'package:pixiehollow/screens/coupons/coupons_screen_view.dart';
-import 'package:pixiehollow/screens/orders/orders_screen_view.dart';
-import 'package:pixiehollow/screens/payment/payment_screen_view.dart';
-import 'package:pixiehollow/screens/pixiefamily/pixiefamily_screen_view.dart';
-import 'package:pixiehollow/screens/profile/profile_screen_view.dart';
-import 'package:pixiehollow/screens/settings/settings_screen_view.dart';
-import 'package:pixiehollow/screens/support/support_screen_view.dart';
-import 'package:pixiehollow/screens/wallet/wallet_screen_view.dart';
-import 'package:pixiehollow/screens/youloved/youloved_screen_view.dart';
+import 'package:pixiehollow/app/app.locator.dart';
+import 'package:pixiehollow/app/app.router.dart';
 import 'package:pixiehollow/utils/widgets/label.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class Navbar extends StatelessWidget {
+  final _navigationService = locator<NavigationService>();
+
   final void Function()? ordersTapped;
   final void Function()? youLovedTapped;
   final void Function()? walletTapped;
@@ -25,7 +19,7 @@ class Navbar extends StatelessWidget {
   final void Function()? profileTapped;
   final void Function()? homeTapped;
 
-  const Navbar({
+  Navbar({
     super.key,
     this.ordersTapped,
     this.youLovedTapped,
@@ -55,7 +49,7 @@ class Navbar extends StatelessWidget {
               child: Column(
                 children: [
                   Label(
-                    height: 81,
+                    height: 80,
                     padding: 8,
                     radius: 40,
                     child: Row(
@@ -63,9 +57,7 @@ class Navbar extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.pop(context);
-                            Navigator.of(context).push(CupertinoPageRoute(
-                                builder: (context) => const ProfileView()));
+                            _navigationService.navigateToProfileView();
                           },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -110,10 +102,7 @@ class Navbar extends StatelessWidget {
                             children: [
                               InkWell(
                                 onTap: () {
-                                  Navigator.pop(context);
-                                  Navigator.of(context).push(CupertinoPageRoute(
-                                      builder: (context) =>
-                                          const ProfileView()));
+                                  _navigationService.navigateToProfileView();
                                 },
                                 child: CircleAvatar(
                                   radius: 30,
@@ -146,12 +135,18 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text(
                   'Orders',
-                  style: TextStyle(color: Color.fromRGBO(128, 130, 133, 1)),
+                  style: TextStyle(
+                      color: Color.fromRGBO(
+                        128,
+                        130,
+                        133,
+                        1,
+                      ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const OrdersView()));
+                  _navigationService.navigateToOrdersView();
                 },
               ),
             ),
@@ -162,9 +157,7 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text('You Loved'),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const YouLovedView()));
+                  _navigationService.navigateToYouLovedView();
                 },
               ),
             ),
@@ -175,9 +168,7 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text('Wallet'),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const WalletView()));
+                  _navigationService.navigateToWalletView();
                 },
               ),
             ),
@@ -188,9 +179,7 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text('My Coupons'),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const CouponsView()));
+                  _navigationService.navigateToCouponsView();
                 },
               ),
             ),
@@ -201,9 +190,7 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text('Pixie Hollow Family'),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const FamilyView()));
+                  _navigationService.navigateToFamilyView();
                 },
               ),
             ),
@@ -214,9 +201,7 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text('Payment Methods'),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const PaymentsView()));
+                  _navigationService.navigateToPaymentsView();
                 },
               ),
             ),
@@ -227,9 +212,7 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text('Settings'),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const SettingsView()));
+                  _navigationService.navigateToSettingsView();
                 },
               ),
             ),
@@ -240,9 +223,7 @@ class Navbar extends StatelessWidget {
               child: ListTile(
                 title: const Text('Help & Support'),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(CupertinoPageRoute(
-                      builder: (context) => const SupportView()));
+                  _navigationService.navigateToSupportView();
                 },
               ),
             ),
@@ -250,9 +231,7 @@ class Navbar extends StatelessWidget {
             ListTile(
               title: const Text('Logout'),
               onTap: () {
-                Navigator.pop(context);
-                Navigator.of(context)
-                    .push(CupertinoPageRoute(builder: (context) => AuthView()));
+                _navigationService.navigateToAuthView();
               },
             ),
           ],

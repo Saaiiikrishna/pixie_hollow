@@ -19,7 +19,7 @@ class RegisterAccountView extends StatelessWidget with $RegisterAccountView {
     return ViewModelBuilder<RegisterAccountViewModel>.reactive(
       onViewModelReady: (model) => syncFormWithViewModel(model),
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('Create Account'),
         ),

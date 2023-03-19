@@ -12,7 +12,7 @@ class AddressSelectionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<AddressSelectionViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('Add Address'),
         ),

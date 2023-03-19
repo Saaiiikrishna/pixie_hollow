@@ -10,7 +10,7 @@ class WalletView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<WalletViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('Pixiehollow'),
         ),

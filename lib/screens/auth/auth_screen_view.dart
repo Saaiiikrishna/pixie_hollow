@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pixiehollow/screens/auth/auth_screen_view.form.dart';
 import 'package:pixiehollow/screens/auth/auth_screen_viewmodel.dart';
 import 'package:pixiehollow/utils/base/form_layout_view.dart';
-import 'package:pixiehollow/utils/widgets/navbar.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 
@@ -18,7 +17,6 @@ class AuthView extends StatelessWidget with $AuthView {
     return ViewModelBuilder<AuthViewModel>.reactive(
       onViewModelReady: (model) => syncFormWithViewModel(model),
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
         appBar: AppBar(
           title: const Text('Pixiehollow'),
         ),
