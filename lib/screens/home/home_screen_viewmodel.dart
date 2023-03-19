@@ -45,9 +45,9 @@ class HomeViewModel extends BaseViewModel {
       final currentUser = _userService.currentUser;
       log.v('User synchronization complete. User profile: $currentUser');
 
-      if (!currentUser.hasAddress) {
-        _navigationService.navigateTo(Routes.profileView);
-      }
+      // if (!currentUser.hasAddress) {
+      //   _navigationService.navigateTo(Routes.addressSelectionView);
+      // }
     } else {
       log.v('No user found on device, navigating to Login screen');
       _navigationService.replaceWith(Routes.authView);

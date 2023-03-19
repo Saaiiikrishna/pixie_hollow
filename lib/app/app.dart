@@ -1,4 +1,5 @@
 import 'package:pixiehollow/api/firestore_api.dart';
+import 'package:pixiehollow/screens/address/address_selection_view.dart';
 import 'package:pixiehollow/screens/auth/auth_screen_view.dart';
 import 'package:pixiehollow/screens/coupons/coupons_screen_view.dart';
 import 'package:pixiehollow/screens/home/home_screen_view.dart';
@@ -30,6 +31,7 @@ import 'package:stacked_services/stacked_services.dart';
     CupertinoRoute(page: PaymentsView),
     CupertinoRoute(page: WalletView),
     CupertinoRoute(page: FamilyView),
+    CupertinoRoute(page: AddressSelectionView),
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),

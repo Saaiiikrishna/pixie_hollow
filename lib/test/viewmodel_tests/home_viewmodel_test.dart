@@ -42,15 +42,15 @@ void main() {
         verify(userService.currentUser);
       });
 
-      test(
-          'User does not have a default address, navigate to address selection view',
-          () async {
-        final navigationService = getAndRegisterNavigationService();
-        getAndRegisterUserService(hasLoggedInUser: true);
-        final model = _getModel();
-        await model.runHomeLogic();
-        verify(navigationService.navigateTo(Routes.profileView));
-      });
+      //   test(
+      //       'User does not have a default address, navigate to address selection view',
+      //       () async {
+      //     final navigationService = getAndRegisterNavigationService();
+      //     getAndRegisterUserService(hasLoggedInUser: true);
+      //     final model = _getModel();
+      //     await model.runHomeLogic();
+      //     verify(navigationService.navigateTo(Routes.addressSelectionView));
+      //   });
     });
   });
 }
