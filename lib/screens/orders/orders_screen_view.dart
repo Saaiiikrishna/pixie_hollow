@@ -10,7 +10,7 @@ class OrdersView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<OrdersViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('Your Orders'),
         ),

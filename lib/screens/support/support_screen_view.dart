@@ -11,7 +11,7 @@ class SupportView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<SupportViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        drawer: const Navbar(),
+        drawer: Navbar(),
         appBar: AppBar(
           title: const Text('Help & Support'),
         ),
