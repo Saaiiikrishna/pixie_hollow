@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "976557541278-brr4dr1fhckmh5cj3die6mg7hsqvr9tf.apps.googleusercontent.com",
+          "client_id": "976557541278-st5f049ennrbt18rigvv0qje6j2udril.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "in.pixiehollow.pixiehollow",
-            "certificate_hash": "38a7bf885835dae91dc026ad181106f9fced6458"
+            "certificate_hash": "e98f54b3f894163d07493836dddeac93de3d6720"
           }
         },
         {

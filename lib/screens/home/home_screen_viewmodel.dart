@@ -49,8 +49,8 @@ class HomeViewModel extends BaseViewModel {
       //   _navigationService.navigateTo(Routes.addressSelectionView);
       // }
     } else {
-      log.v('No user found on device, navigating to Login screen');
-      _navigationService.replaceWith(Routes.authView);
+      log.v('No user found on device, navigating to Home screen');
+      // _navigationService.replaceWith(Routes.homeView);
     }
   }
 }

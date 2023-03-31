@@ -21,11 +21,11 @@ void main() {
         verify(userService.hasLoggedInUser);
       });
 
-      test('When we found no user, navigate to login view', () async {
+      test('When we found no user, navigate to home view', () async {
         final navigationService = getAndRegisterNavigationService();
         final model = _getModel();
         await model.runHomeLogic();
-        verify(navigationService.replaceWith(Routes.authView));
+        verify(navigationService.replaceWith(Routes.homeView));
       });
 
       test('When user is found on local disk, sync user profile', () async {

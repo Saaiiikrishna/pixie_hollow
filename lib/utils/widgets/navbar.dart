@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pixiehollow/app/app.locator.dart';
 import 'package:pixiehollow/app/app.router.dart';
+import 'package:pixiehollow/services/user_service.dart';
+import 'package:pixiehollow/utils/general/colors.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class Navbar extends StatelessWidget {
   final _navigationService = locator<NavigationService>();
+  final _userService = locator<UserService>();
 
   final void Function()? ordersTapped;
   final void Function()? youLovedTapped;
@@ -35,116 +38,160 @@ class Navbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentUser = _userService.currentUser;
     return SafeArea(
       child: Drawer(
-        backgroundColor: const Color.fromRGBO(255, 183, 197, 1),
+        backgroundColor: textBgColor,
         child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 50, bottom: 50),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 27.5),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(40),
-                          bottomRight: Radius.circular(40),
-                        ),
+              child: Column(children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 27.5),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(40),
+                        bottomRight: Radius.circular(40),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              _navigationService.navigateToProfileView();
-                            },
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 15.5),
-                                  child: Text(
-                                    'Sai Charan Chatla',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      color: Color.fromRGBO(
-                                        128,
-                                        130,
-                                        133,
-                                        1,
+                    ),
+                    child: _userService.hasLoggedInUser
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  _navigationService.navigateToProfileView();
+                                },
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(left: 15.5),
+                                      child: Text(
+                                        '${currentUser?.fullName}',
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: textColor,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(15.5, 0, 3.0, 0),
-                                  child: Text(
-                                    '8474857587',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Color.fromRGBO(
-                                        128,
-                                        130,
-                                        133,
-                                        1,
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15.5, 0, 3.0, 0),
+                                      child: Text(
+                                        '${currentUser?.mobile}',
+                                        style: const TextStyle(
+                                          fontSize: 10,
+                                          color: textColor,
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                    Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            15.5, 0, 3.0, 0),
+                                        child: Text(
+                                          '${currentUser?.email}',
+                                          style: const TextStyle(
+                                            fontSize: 10,
+                                            color: textColor,
+                                          ),
+                                        )),
+                                  ],
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(15.5, 0, 3.0, 0),
-                                  child: Text(
-                                    'sravani@gmail.com',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Color.fromRGBO(
-                                        128,
-                                        130,
-                                        133,
-                                        1,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                InkWell(
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: InkWell(
                                   onTap: () {
                                     _navigationService.navigateToProfileView();
                                   },
-                                  child: CircleAvatar(
-                                    radius: 30,
-                                    child: ClipOval(
-                                      child: Image.asset(
-                                        'assets/images/img1.jpeg',
-                                        width: 60,
-                                        height: 60,
-                                        fit: BoxFit.cover,
-                                      ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 30,
+                                        child: ClipOval(
+                                          child: Image.asset(
+                                            'assets/images/img1.jpeg',
+                                            width: 60,
+                                            height: 60,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  _navigationService.navigateToAuthView();
+                                },
+                                child: const Padding(
+                                  padding: EdgeInsets.only(left: 15.5),
+                                  child: Text(
+                                    'Log In',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      color: textColor,
                                     ),
                                   ),
-                                )
-                              ],
-                            ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: InkWell(
+                                  onTap: () {
+                                    _navigationService.navigateToAuthView();
+                                  },
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      CircleAvatar(
+                                        backgroundColor: textBgColor,
+                                        radius: 30,
+                                        child: ClipOval(
+                                          child: IconButton(
+                                            iconSize: 45,
+                                            onPressed: () {},
+                                            icon: const Icon(
+                                              Icons.person_rounded,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          // Image.asset(
+                                          //   'assets/images/img1.jpeg',
+                                          //   width: 60,
+                                          //   height: 60,
+                                          //   fit: BoxFit.cover,
+                                          // ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
                   ),
-                ],
-              ),
+                ),
+              ]),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 27.5, bottom: 8),
@@ -152,12 +199,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'Orders',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -188,12 +230,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'You Loved',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -224,12 +261,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'Wallet',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -261,12 +293,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'My Coupons',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -297,12 +324,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'Pixie Hollow Family',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -333,12 +355,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'Payment Methods',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -369,12 +386,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'Settings',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -405,12 +417,7 @@ class Navbar extends StatelessWidget {
                 title: const Text(
                   'Help & Support',
                   style: TextStyle(
-                      color: Color.fromRGBO(
-                        128,
-                        130,
-                        133,
-                        1,
-                      ),
+                      color: textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),

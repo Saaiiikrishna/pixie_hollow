@@ -3,12 +3,12 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i3;
 
 import 'package:flutter/material.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:pixiehollow/models/user_model.dart' as _i2;
-import 'package:pixiehollow/services/user_service.dart' as _i3;
+import 'package:pixiehollow/models/user_model.dart' as _i4;
+import 'package:pixiehollow/services/user_service.dart' as _i2;
 import 'package:stacked_services/stacked_services.dart' as _i5;
 
 // ignore_for_file: type=lint
@@ -22,32 +22,10 @@ import 'package:stacked_services/stacked_services.dart' as _i5;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeUserModel_0 extends _i1.SmartFake implements _i2.UserModel {
-  _FakeUserModel_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
 /// A class which mocks [UserService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockUserService extends _i1.Mock implements _i3.UserService {
-  @override
-  _i2.UserModel get currentUser => (super.noSuchMethod(
-        Invocation.getter(#currentUser),
-        returnValue: _FakeUserModel_0(
-          this,
-          Invocation.getter(#currentUser),
-        ),
-        returnValueForMissingStub: _FakeUserModel_0(
-          this,
-          Invocation.getter(#currentUser),
-        ),
-      ) as _i2.UserModel);
+class MockUserService extends _i1.Mock implements _i2.UserService {
   @override
   bool get hasLoggedInUser => (super.noSuchMethod(
         Invocation.getter(#hasLoggedInUser),
@@ -55,25 +33,25 @@ class MockUserService extends _i1.Mock implements _i3.UserService {
         returnValueForMissingStub: false,
       ) as bool);
   @override
-  _i4.Future<void> syncUserAccount() => (super.noSuchMethod(
+  _i3.Future<void> syncUserAccount() => (super.noSuchMethod(
         Invocation.method(
           #syncUserAccount,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> syncOrCreateUserAccount({required _i2.UserModel? user}) =>
+  _i3.Future<void> syncOrCreateUserAccount({required _i4.UserModel? user}) =>
       (super.noSuchMethod(
         Invocation.method(
           #syncOrCreateUserAccount,
           [],
           {#user: user},
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }
 
 /// A class which mocks [NavigationService].
@@ -128,7 +106,7 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
         returnValueForMissingStub: null,
       );
   @override
-  _i4.Future<T?>? navigateWithTransition<T>(
+  _i3.Future<T?>? navigateWithTransition<T>(
     _i6.Widget? page, {
     bool? opaque,
     String? transition = r'',
@@ -161,9 +139,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? replaceWithTransition<T>(
+  _i3.Future<T?>? replaceWithTransition<T>(
     _i6.Widget? page, {
     bool? opaque,
     String? transition = r'',
@@ -196,7 +174,7 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
   bool back<T>({
     dynamic result,
@@ -236,7 +214,7 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
         returnValueForMissingStub: null,
       );
   @override
-  _i4.Future<T?>? navigateTo<T>(
+  _i3.Future<T?>? navigateTo<T>(
     String? routeName, {
     dynamic arguments,
     int? id,
@@ -257,9 +235,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? navigateToView<T>(
+  _i3.Future<T?>? navigateToView<T>(
     _i6.Widget? view, {
     dynamic arguments,
     int? id,
@@ -290,9 +268,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? replaceWith<T>(
+  _i3.Future<T?>? replaceWith<T>(
     String? routeName, {
     dynamic arguments,
     int? id,
@@ -313,9 +291,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? clearStackAndShow<T>(
+  _i3.Future<T?>? clearStackAndShow<T>(
     String? routeName, {
     dynamic arguments,
     int? id,
@@ -332,9 +310,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? clearStackAndShowView<T>(
+  _i3.Future<T?>? clearStackAndShowView<T>(
     _i6.Widget? view, {
     dynamic arguments,
     int? id,
@@ -349,9 +327,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? clearTillFirstAndShow<T>(
+  _i3.Future<T?>? clearTillFirstAndShow<T>(
     String? routeName, {
     dynamic arguments,
     int? id,
@@ -370,9 +348,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? clearTillFirstAndShowView<T>(
+  _i3.Future<T?>? clearTillFirstAndShowView<T>(
     _i6.Widget? view, {
     dynamic arguments,
     int? id,
@@ -387,9 +365,9 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
   @override
-  _i4.Future<T?>? pushNamedAndRemoveUntil<T>(
+  _i3.Future<T?>? pushNamedAndRemoveUntil<T>(
     String? routeName, {
     _i6.RoutePredicate? predicate,
     dynamic arguments,
@@ -406,5 +384,5 @@ class MockNavigationService extends _i1.Mock implements _i5.NavigationService {
           },
         ),
         returnValueForMissingStub: null,
-      ) as _i4.Future<T?>?);
+      ) as _i3.Future<T?>?);
 }
