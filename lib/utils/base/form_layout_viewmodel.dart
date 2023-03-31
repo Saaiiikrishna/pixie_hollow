@@ -76,7 +76,7 @@ abstract class FormLayoutViewModel extends FormViewModel {
         user: UserModel(
             id: user.uid,
             email: user.email,
-            fullName: user.displayName ?? fullNameValue),
+            fullName: fullNameValue ?? user.displayName),
       );
 
       // navigate to success route
