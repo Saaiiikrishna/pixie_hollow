@@ -162,25 +162,16 @@ class Navbar extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: [
+                                    children: const [
                                       CircleAvatar(
                                         backgroundColor: textBgColor,
                                         radius: 30,
                                         child: ClipOval(
-                                          child: IconButton(
-                                            iconSize: 45,
-                                            onPressed: () {},
-                                            icon: const Icon(
-                                              Icons.person_rounded,
-                                              color: Colors.white,
-                                            ),
+                                          child: Icon(
+                                            Icons.person_rounded,
+                                            color: Colors.white,
+                                            size: 50,
                                           ),
-                                          // Image.asset(
-                                          //   'assets/images/img1.jpeg',
-                                          //   width: 60,
-                                          //   height: 60,
-                                          //   fit: BoxFit.cover,
-                                          // ),
                                         ),
                                       )
                                     ],
@@ -215,12 +206,7 @@ class Navbar extends StatelessWidget {
                 ),
                 leading: const Icon(
                   Icons.shopping_cart,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -246,12 +232,7 @@ class Navbar extends StatelessWidget {
                 ),
                 leading: const Icon(
                   Icons.favorite_rounded,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -278,12 +259,7 @@ class Navbar extends StatelessWidget {
                 leading: const Icon(
                   Icons.account_balance_wallet_rounded,
                   // Icons.wallet,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -309,12 +285,7 @@ class Navbar extends StatelessWidget {
                 ),
                 leading: const Icon(
                   Icons.local_offer,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -340,12 +311,7 @@ class Navbar extends StatelessWidget {
                 ),
                 leading: const Icon(
                   Icons.groups,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -371,12 +337,7 @@ class Navbar extends StatelessWidget {
                 ),
                 leading: const Icon(
                   Icons.credit_card,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -402,12 +363,7 @@ class Navbar extends StatelessWidget {
                 ),
                 leading: const Icon(
                   Icons.settings,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -433,12 +389,7 @@ class Navbar extends StatelessWidget {
                 ),
                 leading: const Icon(
                   Icons.help_rounded,
-                  color: Color.fromRGBO(
-                    128,
-                    130,
-                    133,
-                    1,
-                  ),
+                  color: textColor,
                 ),
               ),
             ),
@@ -447,9 +398,9 @@ class Navbar extends StatelessWidget {
               child: ElevatedButton.icon(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    const Color.fromRGBO(255, 183, 197, 1),
+                    textBgColor,
                   ),
-                  elevation: MaterialStateProperty.all(0),
+                  elevation: MaterialStateProperty.all(8),
                 ),
                 onPressed: () {},
                 icon: const Icon(
@@ -465,6 +416,15 @@ class Navbar extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 8,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            const Center(
+              child: Text(
+                'Made with Love',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
                     fontWeight: FontWeight.bold),
               ),
             )
