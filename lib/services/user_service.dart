@@ -13,7 +13,7 @@ class UserService {
 
   UserModel? _currentUser;
 
-  UserModel get currentUser => _currentUser!;
+  UserModel? get currentUser => _currentUser;
 
   bool get hasLoggedInUser => _firebaseAuthenticationService.hasUser;
 

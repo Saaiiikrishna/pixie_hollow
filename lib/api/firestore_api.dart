@@ -15,7 +15,7 @@ class FirestoreApi {
     try {
       final userDocument = usersCollection.doc(user.id);
       await userDocument.set(user.toJson());
-      log.v('UserCreated at ${userDocument.path}');
+      log.v('User Created at ${userDocument.path}');
     } catch (error) {
       throw FirestoreApiException(
         message: 'Failed to create new user',

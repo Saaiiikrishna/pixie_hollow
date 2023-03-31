@@ -19,8 +19,8 @@ UserService getAndRegisterUserService({
   _removeRegistrationIfExists<UserService>();
   final service = MockUserService();
   when(service.hasLoggedInUser).thenReturn(hasLoggedInUser);
-  when(service.currentUser).thenReturn(
-      currentUser ?? UserModel(id: "default_user", name: "default_user"));
+  when(service.currentUser)
+      .thenReturn(currentUser ?? UserModel(id: "default_user"));
   locator.registerSingleton<UserService>(service);
   return service;
 }
