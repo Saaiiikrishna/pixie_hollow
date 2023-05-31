@@ -47,7 +47,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDtcKMuYBrlMRiTslOLpGHnQUb2prD1Yvk',
+    apiKey: 'APIKEY',
     appId: '1:976557541278:web:0b37b439389067fbc0b88f',
     messagingSenderId: '976557541278',
     projectId: 'pixiehollow',
